@@ -1,0 +1,63 @@
+.menuCardImageContainer {
+  width: 30rem;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.menuCardImage {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-light);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s;
+}
+
+.cardMenu {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  padding-right: 1.5rem;
+}
+
+.menuCardText {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.star {
+  display: flex;
+  gap: 2rem;
+  margin-top: -1rem;
+}
+
+.star span {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.menuDishPrice {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 5rem;
+}
+
+.menuCardDetails {
+  display: flex;
+  flex-direction: column;
+  margin-top: -2rem;
+}
+
+.menuCardDetails h2 {
+  font-size: 2rem;
+}
+
+.menuCardDetails p {
+  margin-top: -1.5rem;
+}

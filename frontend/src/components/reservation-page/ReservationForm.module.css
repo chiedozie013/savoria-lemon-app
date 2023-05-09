@@ -1,0 +1,121 @@
+.form {
+  width: 50%;
+  color: var(--color-primary-500);
+  padding: 3rem 2rem;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-top: -1rem;
+  background-color: var(--color-white);
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(27%) sepia(25%) saturate(309%) hue-rotate(106deg)
+    brightness(97%) contrast(90%);
+}
+
+.errorContent {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  align-items: center;
+  color: #e53e3e;
+}
+
+/* .errorContent svg {
+  height: 1.5rem;
+} */
+
+.formNumberInput {
+  width: 100%;
+  min-width: 0px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  transition-property: var(--chakra-transition-property-common);
+  transition-duration: var(--chakra-transition-duration-normal);
+  font-size: var(--chakra-fontSizes-md);
+  -webkit-padding-start: var(--chakra-space-4);
+  padding-inline-start: var(--chakra-space-4);
+  -webkit-padding-end: var(--chakra-space-4);
+  padding-inline-end: var(--chakra-space-4);
+  height: var(--chakra-sizes-10);
+  border-radius: var(--chakra-radii-md);
+  border: 1px solid;
+  border-color: inherit;
+  background: inherit;
+  transition: all 0.3s;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+.formNumberInput:hover:not(.error):not(:focus-visible) {
+  border-color: var(--chakra-colors-gray-300);
+}
+
+.formNumberInput:focus-visible,
+.input:focus-visible {
+  z-index: 1;
+  border: none;
+  /* border-color: #e1e512; */
+  box-shadow: 0 0 0 3px #e1e512;
+}
+
+.input {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: none;
+  width: 100%;
+}
+
+.submitButton {
+  width: 100%;
+  /* grid-column: 1 / -1; */
+}
+
+.form > :last-of-type {
+  grid-column: 1 / -1;
+}
+
+::placeholder {
+  font-size: 0.85rem;
+  color: #a89b9b;
+}
+
+.formRadio {
+  display: flex;
+  justify-content: space-between;
+}
+
+textarea {
+  margin-top: 0.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .form {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .form {
+    width: 100%;
+    padding: 3rem 1rem;
+  }
+}

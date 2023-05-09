@@ -1,0 +1,43 @@
+.reservationFormSection {
+  padding: 6rem 0 7rem 0;
+}
+
+.reservationPageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.textSection {
+  font-display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-display-title);
+  color: var(--color-accent-500);
+  font-weight: 600;
+}
+
+.subtitle {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-display-subtitle);
+  margin-top: -2rem;
+}
+
+.reservationContainer {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.subContainer {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+  padding: 2rem 0 4rem 0;
+  width: 100wh;
+}

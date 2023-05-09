@@ -1,0 +1,29 @@
+.testimoniesSection {
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+  padding: 3rem 0 5rem 0;
+}
+
+.testimoniesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.testimoniesContainer h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonyCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
+  column-gap: 2rem;
+  row-gap: 3rem;
+}
+
+.testimoniesTitle {
+  justify-content: center;
+}

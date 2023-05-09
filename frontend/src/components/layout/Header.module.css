@@ -1,0 +1,90 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: var(--color-white);
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.logo img {
+  width: 17rem;
+}
+
+.mainNavigation menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.mainNavigation menu li {
+  font-weight: 800;
+  font-size: var(--font-size-big);
+}
+
+@media screen and (max-width: 1024px) {
+  .mainNavigation {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 60%;
+    right: 0;
+    z-index: var(--z-menu-overlay);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.3s;
+    font-family: var(--font-heading);
+    /* background-color: var(--color-white); */
+    backdrop-filter: blur(100px);
+  }
+
+  .mainNavigationOpen {
+    transform: translateX(0);
+  }
+
+  .mainNavigation menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-left: -60%;
+    /* margin-top: -02%; */
+  }
+
+  .mainNavigation a {
+    font-size: 2rem;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .toggleButton {
+    position: relative;
+    z-index: var(--z-toggleButton);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .toggleButton {
+    display: none;
+  }
+  .active {
+    color: aqua;
+    background-color: blue;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mainNavigation menu {
+    margin-top: -20%;
+  }
+}

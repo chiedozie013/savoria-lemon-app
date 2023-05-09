@@ -1,0 +1,49 @@
+.formConfirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: -2rem;
+}
+
+.confirmationMessage {
+  display: flex;
+  /* flex-direction: ; */
+  align-items: center;
+  gap: 2rem;
+}
+
+.confirmationMessage svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.confirmationMessage p {
+  font-size: var(--font-lead-text);
+}
+
+.confirmationImage {
+  width: 30%;
+}
+
+.confirmationImage img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.confirmationActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.actions a {
+  text-decoration: underline;
+}

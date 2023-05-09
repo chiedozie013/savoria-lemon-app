@@ -1,0 +1,41 @@
+.footerLogo img {
+  width: 5rem;
+}
+.footer {
+  background-color: var(--color-primary-500);
+}
+
+.cont {
+  color: #fff;
+  margin-bottom: -0.5rem;
+}
+.footer {
+  align-content: center;
+}
+.footerContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  align-items: center;
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+}
+
+.anchor {
+  color: #fff;
+  top: 4rem;
+  text-decoration: underline;
+}
+
+.socials {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+a:hover {
+  color: var(--color-accent-500);
+}
