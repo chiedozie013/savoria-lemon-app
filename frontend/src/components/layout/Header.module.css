@@ -16,17 +16,17 @@
 }
 
 .logo img {
-  width: 17rem;
+  width: 14rem;
 }
 
 .mainNavigation menu {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .mainNavigation menu li {
   font-weight: 800;
-  font-size: var(--font-size-big);
+  font-size: var(--font-size-h6);
 }
 
 @media screen and (max-width: 1024px) {
