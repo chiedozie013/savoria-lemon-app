@@ -12,6 +12,6 @@ The backend is done with django framework
 
 ## Authors
 
-James Chiedozie James <chiedozie013@gmail.com>
-Cynthia Anosike <>
+James Chiedozie James <chiedozie013@gmail.com><br>
+Cynthia Anosike <><br>
 Obiukwu Ezeagwu<>
