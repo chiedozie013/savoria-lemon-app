@@ -1,6 +1,13 @@
+import { Link } from "react-router-dom";
 import HeroImage from "../../images/cta-hero-image.jpg";
 import classes from "./HeroSection.module.css";
 export default function HeroSection() {
+  // const handleClick = (event) => {
+  //   event.preventDefault();
+  //   window.location.href = "/Reservation-Page";
+  // };
+  // href="/Reservation-Page" onClick={handleClick}
+
   return (
     <section className={classes.heroSection}>
       <div className={`fluidContainer ${classes.heroContainer}`}>
@@ -12,7 +19,9 @@ export default function HeroSection() {
             traditional recipes served with a modern twist.
           </div>
           <div className={classes.action}>
-            <button href="/">Reserve a table</button>
+            <button>
+              <Link to="/Reservation-Page">Reserve a table</Link>
+            </button>
           </div>
         </div>
         <div className={classes.heroImage}>

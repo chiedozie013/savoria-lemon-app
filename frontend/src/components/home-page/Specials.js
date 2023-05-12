@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import SpecialCards from "./SpecialCards";
 import Meal3 from "../../images/Lemon-Dessert.png";
@@ -39,12 +39,19 @@ const specialsDishes = [
 ];
 
 export default function Specials() {
+  // const handleClick = (event) => {
+  //   event.preventDefault();
+  //   window.location.href = "/Reservation-Page";
+  // };
+
   return (
     <section className={classes.specialsSection}>
       <div className={`fluidContainer ${classes.specialsContainer}`}>
         <div className={classes.specialsMain}>
           <h2 className="sectionTitle">This week specials!</h2>
-          <button>Online Menu</button>
+          <button>
+            <Link to="/Menu-Page">Online Menu</Link>
+          </button>
         </div>
         <div className={classes.specialsCatlog}>
           {specialsDishes.map((dish) => (
