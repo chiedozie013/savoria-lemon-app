@@ -80,7 +80,7 @@ export default function Menu() {
           <div className={classes.menuContainer}>
             <h3 className="sectionTitle">Place your orders...</h3>
             <div className={classes.menuCard}>
-              {menuDishes.map((dish, index) => (
+              {menuDishes.map((dish) => (
                 <MenuCards
                   key={dish.id}
                   image={dish.image}
