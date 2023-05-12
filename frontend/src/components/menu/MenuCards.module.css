@@ -1,6 +1,6 @@
 .menuCardImageContainer {
   width: 30rem;
-  height: 230px;
+  height: 150px;
   overflow: hidden;
   border-radius: 1rem;
 }
@@ -45,7 +45,7 @@
 .menuDishPrice {
   font-size: 1.5rem;
   font-weight: 800;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 
 .menuCardDetails {

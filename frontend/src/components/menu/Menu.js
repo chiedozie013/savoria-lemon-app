@@ -21,7 +21,7 @@ const menuDishes = [
   {
     id: "m1",
     image: Meal1,
-    title: "Bruchetta",
+    name: "Bruchetta",
     price: 5.89,
     rate: 4,
     description: "Bruchetta with a bottle of white wine",
@@ -29,7 +29,7 @@ const menuDishes = [
   {
     id: "m2",
     image: Meal2,
-    title: "Greek Salad",
+    name: "Greek Salad",
     price: 12.99,
     rate: 4.9,
     description: "Greek Salad with extra cheese",
@@ -37,7 +37,7 @@ const menuDishes = [
   {
     id: "m3",
     image: Meal3,
-    title: "Lemon Dessert",
+    name: "Lemon Dessert",
     price: 6.02,
     rate: 3.6,
     description: "Lemon Dessert with extra cheese",
@@ -45,7 +45,7 @@ const menuDishes = [
   {
     id: "m4",
     image: Meal4,
-    title: "French Pizza",
+    name: "French Pizza",
     price: 5.87,
     rate: 4.2,
     description: "Lemon Dessert with extra cheese",
@@ -53,7 +53,7 @@ const menuDishes = [
   {
     id: "m5",
     image: Meal5,
-    title: "Green Salad",
+    name: "Green Salad",
     price: 8.47,
     rate: 5,
     description: "Green Salad with white wine",
@@ -61,7 +61,7 @@ const menuDishes = [
   {
     id: "m6",
     image: Meal6,
-    title: "French Balonge",
+    name: "French Balonge",
     price: 5.87,
     rate: 4.3,
     description: "French Balonge with horny",
@@ -84,7 +84,7 @@ export default function Menu() {
                 <MenuCards
                   key={dish.id}
                   image={dish.image}
-                  title={dish.title}
+                  name={dish.name}
                   price={dish.price}
                   rating={dish.rate}
                   description={dish.description}
