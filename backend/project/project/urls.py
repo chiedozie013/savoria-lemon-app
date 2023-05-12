@@ -5,11 +5,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from integrate.views import AddMenuView
+from integrate.views import MenuView
 from rest_framework import routers
 
 route = routers.DefaultRouter()
-route.register("", AddMenuView, basename='addmenuview')
+route.register("", MenuView, basename='menuview')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

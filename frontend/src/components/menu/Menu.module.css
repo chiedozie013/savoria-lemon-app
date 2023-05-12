@@ -25,3 +25,7 @@
   font-size: var(--font-size-display-subtitle);
   margin-top: -2rem;
 }
+
+.menuCard {
+  margin-top: 2rem;
+}
