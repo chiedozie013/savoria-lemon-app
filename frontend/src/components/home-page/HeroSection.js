@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import HeroImage from "../../images/cta-hero-image.jpg";
 import classes from "./HeroSection.module.css";
+
 export default function HeroSection() {
   // const handleClick = (event) => {
   //   event.preventDefault();
