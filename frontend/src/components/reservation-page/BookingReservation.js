@@ -29,6 +29,7 @@ export default function BookingReservation() {
     "Friends-Hangout",
     "Others",
   ]);
+  const [seating] = useState(["Indoor", "Outdoor"]);
   const [isFormDisplayed, setIsFormDisplayed] = useState(true);
   const { isLoading, response, submitAPI } = useSubmit();
   const { onOpen } = useAlertContext();
@@ -48,8 +49,8 @@ export default function BookingReservation() {
         setIsFormDisplayed(false);
       }
       onOpen(response.type, response.message);
-    } // eslint-disable-next-line
-  }, [response]);
+    }
+  }, [response, onOpen]);
 
   const updateTimesHandler = (e) => {
     dispatch({ type: "update-times", payload: e.target.value });
@@ -70,6 +71,7 @@ export default function BookingReservation() {
                 <ReservationForm
                   availableTimes={availableTimes}
                   occasions={occasions}
+                  seating={seating}
                   updateTimes={updateTimesHandler}
                   isLoading={isLoading}
                   submitAPI={submitAPI}
@@ -84,3 +86,5 @@ export default function BookingReservation() {
     </Fragment>
   );
 }
+
+// eslint-disable-next-line

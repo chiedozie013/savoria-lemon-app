@@ -14,7 +14,6 @@ class Menu(models.Model):
         return self.name
 
 class Reservation(models.Model):
-    seating = models.CharField(max_length=30, null=False, blank=False)
     firstName = models.CharField(max_length=200, null=False, blank=False)
     lastName = models.CharField(max_length=200, null=False, blank=False)
     email = models.CharField(max_length=200, null=False, blank=False)
@@ -23,7 +22,8 @@ class Reservation(models.Model):
     time = models.TimeField(null=False, blank=False)
     guests = models.IntegerField(null=False, blank=False)
     occasion = models.CharField(max_length=200, null=False, blank=False)
-    comment = models.TextField()
+    seating = models.CharField(max_length=30, null=False, blank=False)
+    comment = models.TextField(max_length=1500)
 
     def __str__(self):
         return self.firstName

@@ -7,6 +7,7 @@ import {
   FormLabel,
   Input,
   Select,
+  Textarea,
 } from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,9 +16,12 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./ReservationForm.module.css";
 
+import axios from "axios";
+
 export default function ReservationForm({
   availableTimes,
   occasions,
+  seating,
   updateTimes,
   isLoading,
   submitAPI,
@@ -35,12 +39,14 @@ export default function ReservationForm({
       guests: "",
       // test: 0,
       occasion: "",
+      seating: "",
       policy: "",
     },
     onSubmit: (values) => {
       // console.log(values);
       submitAPI(values);
     },
+
     validationSchema: Yup.object({
       firstName: Yup.string().required("You have to put your firstname"),
       lastName: Yup.string().required("You have to put your lastname"),
@@ -54,8 +60,32 @@ export default function ReservationForm({
         .required("You have to provide at least 1 guest"),
       // test: Yup.string().required(),
       occasion: Yup.string().required("You have to pick an occasion"),
+      seating: Yup.string().required("You have to pick a seating position"),
     }),
   });
+
+  const Reservation = async () => {
+    let formField = new FormData();
+
+    formField.append("firstName", formik.values.firstName);
+    formField.append("lastName", formik.values.lastName);
+    formField.append("email", formik.values.email);
+    formField.append("number", formik.values.number);
+    formField.append("date", formik.values.date);
+    formField.append("time", formik.values.time);
+    formField.append("guests", formik.values.guests);
+    formField.append("occasion", formik.values.occasion);
+    formField.append("seating", formik.values.seating);
+    formField.append("comment", formik.values.comment);
+
+    await axios({
+      method: "post",
+      url: "http://localhost:8000/api/",
+      data: formField,
+    }).then((response) => {
+      console.log(response.data);
+    });
+  };
 
   // Validates email address
   const [setEmail] = useState("");
@@ -71,34 +101,6 @@ export default function ReservationForm({
   }
   return (
     <form onSubmit={formik.handleSubmit} className={classes.form}>
-      <FormControl>
-        <FormLabel
-          htmlFor="indoor"
-          fontWeight={600}
-          fontSize="var(--font-lead-text)"
-          className={classes.formRadio}
-        >
-          Indoor Seating
-          <Input
-            type="radio"
-            id="indoor"
-            name="seating"
-            value="indoor"
-            checked="true"
-          />
-        </FormLabel>
-      </FormControl>
-      <FormControl>
-        <FormLabel
-          htmlFor="outdoor"
-          fontWeight={600}
-          fontSize="var(--font-lead-text)"
-          className={classes.formRadio}
-        >
-          Outdoor Seating
-          <Input type="radio" id="outdoor" name="seating" value="outdoor" />
-        </FormLabel>
-      </FormControl>
       <FormControl
         isInvalid={formik.touched.firstName && formik.errors.firstName}
       >
@@ -333,6 +335,36 @@ export default function ReservationForm({
           )}
         </FormErrorMessage>
       </FormControl>
+      <FormControl isInvalid={formik.touched.seating && formik.errors.seating}>
+        <FormLabel
+          htmlFor="seating"
+          fontWeight={600}
+          fontSize="var(--font-lead-text)"
+        >
+          Preferred Seating
+        </FormLabel>
+        <Select
+          className={classes.input}
+          id="seating"
+          name="seating"
+          placeholder="Select a seating position"
+          {...formik.getFieldProps("seating")}
+        >
+          {seating.map((item, index) => (
+            <option key={index} value={item}>
+              {item}
+            </option>
+          ))}
+        </Select>
+        <FormErrorMessage>
+          {formik.errors.seating && (
+            <div className={classes.errorContent}>
+              <FontAwesomeIcon icon={faExclamationTriangle} />
+              {formik.errors.seating}
+            </div>
+          )}
+        </FormErrorMessage>
+      </FormControl>
       <FormControl>
         <FormLabel
           htmlFor="comment"
@@ -340,12 +372,13 @@ export default function ReservationForm({
           fontSize="var(--font-lead-text)"
         >
           Special Requests
-          <textarea
+          <Textarea
             type="textarea"
             id="comment"
             name="comment"
             rows="8"
             placeholder="Comments"
+            {...formik.getFieldProps("comment")}
             className={classes.input}
           />
         </FormLabel>
@@ -353,9 +386,11 @@ export default function ReservationForm({
       <div style={{ marginTop: "1.5rem" }}>
         <button
           className={classes.submitButton}
+          type="submit"
           fullWidth={true}
           disabled={isLoading}
           isSubmit={true}
+          onClick={Reservation}
         >
           {isLoading ? (
             <span style={{ display: "inline-flex", gap: "1rem" }}>

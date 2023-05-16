@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Menu, Reservation
-# from .models import Reservations
+
 
 # Register your models here.
 
