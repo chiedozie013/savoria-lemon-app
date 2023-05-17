@@ -80,7 +80,7 @@ export default function ReservationForm({
 
     await axios({
       method: "post",
-      url: "http://localhost:8000/api1/",
+      url: "http://localhost:8000/api/reservation",
       data: formField,
     }).then((response) => {
       console.log(response.data);
