@@ -9,7 +9,10 @@ export default function Menu() {
   const [menuDishes, setMenuDishes] = useState([]);
 
   const getMenuDishes = async () => {
-    const response = await axios.get("http://localhost:8000/api1/menu");
+    const response = await axios({
+      method: "get",
+      url: "http://localhost:8000/api/menu",
+    });
     // console.log(response.data);
     setMenuDishes(response.data);
   };

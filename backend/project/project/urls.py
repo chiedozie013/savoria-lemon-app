@@ -7,16 +7,14 @@ from django.conf.urls.static import static
 from integrate.views import MenuView, ReservationView
 from rest_framework.routers import DefaultRouter
 
-route1 = DefaultRouter(trailing_slash=False)
-route1.register("reservation", ReservationView, basename='reservationview')
 
+route = DefaultRouter(trailing_slash=False)
+route.register("reservation", ReservationView, basename='reservationview')
+route.register("menu/", MenuView, basename='menuview')
 
-route2 = DefaultRouter(trailing_slash=False)
-route2.register("menu", MenuView, basename='menuview')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(route1.urls)),
-    path('api1/', include(route2.urls)),
+    path('api/', include(route.urls)),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
